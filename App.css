@@ -1,0 +1,170 @@
+/* App.css */
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f7;
+}
+
+/* Layout and Board Styles */
+.board {
+  display: flex;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.column {
+  margin: 0 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  width: 300px;
+  min-height: 200px;
+  transition: background-color 0.3s ease;
+}
+
+.column h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.column .task-list {
+  min-height: 100px;
+  padding: 10px 0;
+}
+
+.column .task-card {
+  background-color: #ffffff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  cursor: grab;
+}
+
+.column .task-card:active {
+  cursor: grabbing;
+}
+
+.column.dragging-over {
+  background-color: #e0e0e0;
+}
+
+/* Task Card Hover Effect */
+.column .task-card:hover {
+  background-color: #f1f1f1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Controls and Buttons */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 0 20px;
+}
+
+.controls input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+  font-size: 14px;
+}
+
+.controls button {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.controls button:hover {
+  background-color: #45a049;
+}
+
+.controls button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Add Column Section */
+.add-column {
+  display: flex;
+  margin: 10px 20px;
+  align-items: center;
+}
+
+.add-column input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.add-column button {
+  padding: 8px 16px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.add-column button:hover {
+  background-color: #0069d9;
+}
+
+.add-column button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Delete Column Button */
+.column button {
+  padding: 5px 10px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.column button:hover {
+  background-color: #ff1a1a;
+}
+
+.column button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+.task-card {
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.task-card.dragging {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
